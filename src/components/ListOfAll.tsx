@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import {AppStateInterface, DeviceInterface, ListOfAllInterface} from '../interfaces/interfaces'
+import {ListOfAllInterface} from '../interfaces/interfaces'
 import '../styles/ListOfAll.css'
 
 function ListOfAll (props : ListOfAllInterface) {

@@ -1,7 +1,6 @@
 import '../styles/Filter.css'
 
 import { DeviceInterface, FilterInterface } from "../interfaces/interfaces";
-import React, { useState } from "react";
 
 function Filter (props : FilterInterface) {
 
