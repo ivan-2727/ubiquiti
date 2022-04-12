@@ -1,0 +1,31 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:400,700");
+
+.Navigation--container {
+    overflow: hidden;
+    padding: 0.5%
+}
+
+.Navigation--search {
+    background: url('searchicon.png') no-repeat 10px 6px #fcfcfc;
+    background-size: 20px;
+    border: 1px solid #d1d1d1;
+    font: bold 16px 'Lato';
+    width: 20%;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    float:left
+}
+
+.Navigation--gridButton, .Navigation--listButton {
+    float:right;
+    font-size: x-large;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: none;
+    border: none;
+    color: gray;
+    cursor: pointer;
+}
+

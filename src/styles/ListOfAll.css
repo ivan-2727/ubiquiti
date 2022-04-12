@@ -1,0 +1,107 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:400,700");
+
+.ListOfAll--container {
+    padding-top: 20px;
+}
+
+.ListOfAll--table {
+    line-height: 2;
+    font-family: 'Lato', sans-serif;
+    border: collapse;
+    animation: fadeIn 1s;
+}
+
+.ListOfAll--table {
+    border-spacing: 0;
+}
+
+.ListOfAll--table > tbody > tr > td {
+    border-bottom: solid 1px;
+    border-color: lightgray;
+    cursor: pointer
+}
+
+.ListOfAll--table > thead > tr > th {
+    border-bottom: solid 1px;
+    border-color: lightgray;
+}
+
+.IconHeader {
+    font-size: small;
+    font-weight: lighter;
+    text-align: right;
+    padding-left: 3%;
+    color: gray
+}
+
+.IconCol, .IconHeader {
+    width: 15%;
+    padding-left: 3%
+}
+
+.LineCol, .NameCol, .LineHeader, .NameHeader {
+    text-align: left;
+    width: 30rem;
+    padding-left: 3%
+}
+
+.Icon {
+    float:right;
+    width:40px
+}
+
+.ListOfAll--grid {
+    display: grid;
+    margin: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    max-width: 100%;
+    grid-gap: 1em;
+    animation: fadeIn 1s;
+}
+
+.ListOfAll--grid--item {
+    border: solid 1px;
+    border-color: lightgray;
+    border-radius: 20px;
+}
+
+.ListOfAll--number {
+    padding-left: 30px;
+    color: gray
+}
+
+.ListOfAll--grid--item--image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1px solid;
+}
+
+.ListOfAll--grid--item--name {
+    padding-left: 20px;
+}
+
+.ListOfAll--grid--item--line {
+    padding-left: 20px;
+    color: gray
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }

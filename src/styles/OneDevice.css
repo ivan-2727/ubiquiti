@@ -1,0 +1,42 @@
+.OneDevice--wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+    animation: fadeIn 1s;
+}
+ 
+.OneDevice--container {
+    display: inline-block;
+    margin: auto;
+}
+
+.OneDevice--image {
+    float: left
+}
+
+.OneDevice--description {
+    padding-left: 70px;
+    float: right;
+}
+
+.OneDevice--description > table {
+    border-spacing: 0;
+    width: fit-content;
+    min-width: 350px
+}
+
+.OneDevice--description > table > tbody > tr {
+    line-height: 2;
+}
+
+.OneDevice--description > table > tbody > tr > td {
+    border-bottom: 1px solid lightgray;
+}
+
+.oneDevice--description--left {
+    text-align: left;
+}
+
+.oneDevice--description--right {
+    text-align: right;
+}

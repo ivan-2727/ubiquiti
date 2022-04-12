@@ -1,0 +1,53 @@
+.Filter--Container {
+    float: right
+}
+
+.Filter--Bar--Term, .Filter--Bar--Term > * {
+    cursor: pointer;
+}
+
+.Filter--Bar--Term {
+    border-bottom: solid 1px lightgray;
+}
+
+.Filter--Button {
+    background: none;
+    margin: auto;
+    border: none;
+    color: gray;
+    font-size: large;
+    cursor: pointer;
+}
+
+.Filter--Bar {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    animation: fadeIn 1s;
+    width: 200px;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+.Filter--Container:hover .Filter--Bar {
+    display: block;
+}
