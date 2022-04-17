@@ -13,6 +13,16 @@ export interface DeviceInterface {
     }
 }
 
+export interface fetchFunctionInterface {
+    (): Promise<{
+        json : {
+        () : Promise <{
+            devices: fetchedDeviceInterface[]
+        }> 
+        } 
+    }>
+}
+
 export interface fetchedDeviceInterface {
     icon: {
         resolutions: number[][],

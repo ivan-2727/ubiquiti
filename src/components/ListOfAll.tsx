@@ -15,7 +15,7 @@ function ListOfAll (props : ListOfAllInterface) {
         <tbody> 
         {
             props.devices.map(device => 
-            <tr onClick={()=>{props.selectDevice(device.internalUuid)}}>
+            <tr className="ListOfAll--OneDeviceRow" onClick={()=>{props.selectDevice(device.internalUuid)}}>
                 <td className="IconCol" > 
                     <img className="Icon" src={`https://static.ui.com/fingerprint/ui/icons/${device.icon.id}_${device.icon.res[1]}x${device.icon.res[1]}.png`}/> 
                 </td>

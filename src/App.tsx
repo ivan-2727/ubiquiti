@@ -5,14 +5,23 @@ import Header from './components/Header';
 import OneDevice from './components/OneDevice';
 import Navigation from './components/Navigation';
 import Title from './components/Title';
-import {AppStateInterface} from './interfaces/interfaces'
+import {AppStateInterface, fetchFunctionInterface} from './interfaces/interfaces'
 import { fetchDevices, initialAppState, searchAndFilter} from './functions/functions';
 
 function App() {
 
   const [AppState, setAppState] = useState <AppStateInterface> (initialAppState);
 
-  useEffect(() => {fetchDevices(setAppState, AppState);}, []);
+  useEffect(() => {
+    const handleFetch = async () => {
+      const devices = await fetchDevices();
+      setAppState({
+        ...AppState,
+        devices
+      });
+    }
+    handleFetch();
+  }, []);
   
   const selectDevice = (uuid: string) => {
     setAppState({

@@ -1,42 +1,42 @@
 import { randomUUID } from "crypto";
-import { AppStateInterface, setAppStateInterface, fetchedDeviceInterface, DeviceInterface } from "../interfaces/interfaces";
+import { AppStateInterface, setAppStateInterface, fetchedDeviceInterface, DeviceInterface, fetchFunctionInterface } from "../interfaces/interfaces";
 import {v4 as uuidv4} from 'uuid';
 import OneDevice from "../components/OneDevice";
 
-export const fetchDevices = (setAppState : setAppStateInterface, AppState : AppStateInterface ) => {
-    fetch('https://static.ui.com/fingerprint/ui/public.json')
-    .then(res => res.json())
-    .then(res => {      
-        const devices = res.devices.map((fetchedDevice : fetchedDeviceInterface) => {
-            let shortNames = '';
-            fetchedDevice.shortnames.forEach((oneShortname : string) => {shortNames += oneShortname + ', '});
-            if (shortNames.length>0) shortNames = shortNames.slice(0,shortNames.length-2);
-            let res : number[] = [];
-            let fetchedRes = fetchedDevice.icon.resolutions;
-            fetchedRes.sort((a,b)=> a[0]-b[0]);
-            res.push(fetchedRes[0][0]);
-            res.push(fetchedRes[fetchedRes.length-1][0]);
-            return {
-              line: fetchedDevice.line.name,
-              id: fetchedDevice.line.id,
-              internalUuid: uuidv4(),
-              name: fetchedDevice.product.name,
-              shortNames: shortNames,
-              maxPower: '',
-              speed: '',
-              numPorts: '',
-              icon: {
-                  id: fetchedDevice.icon.id,
-                  res: res
-              }
-            }
-          });
-      setAppState({
-        ...AppState, 
-        devices: devices,
-      })
-    })
+export const fetchDevices = async () : Promise<DeviceInterface[]> => {
+  let devices : DeviceInterface[] = [];
+  try {
+    const data = await (await fetch('https://static.ui.com/fingerprint/ui/public.json')).json()
+    devices = data.devices.map((fetchedDevice : fetchedDeviceInterface) => {
+      let shortNames = '';
+      fetchedDevice.shortnames.forEach((oneShortname : string) => {shortNames += oneShortname + ', '});
+      if (shortNames.length>0) shortNames = shortNames.slice(0,shortNames.length-2);
+      let res : number[] = [];
+      let fetchedRes = fetchedDevice.icon.resolutions;
+      fetchedRes.sort((a,b)=> a[0]-b[0]);
+      res.push(fetchedRes[0][0]);
+      res.push(fetchedRes[fetchedRes.length-1][0]);
+      return {
+        line: fetchedDevice.line.name,
+        id: fetchedDevice.line.id,
+        internalUuid: uuidv4(),
+        name: fetchedDevice.product.name,
+        shortNames: shortNames,
+        maxPower: '',
+        speed: '',
+        numPorts: '',
+        icon: {
+            id: fetchedDevice.icon.id,
+            res: res
+        }
+      }
+    });
   }
+  finally {
+    return devices;
+  }
+      
+}
 
   export const initialAppState = {
     typeOfWindow: 'fullList',

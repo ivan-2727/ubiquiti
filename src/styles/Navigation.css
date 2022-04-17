@@ -1,8 +1,11 @@
-@import url("http://fonts.googleapis.com/css?family=Lato:400,700");
+@import url("//fonts.googleapis.com/css?family=Lato:400,700");
+
+/* desktop view*/ 
 
 .Navigation--container {
     overflow: hidden;
-    padding: 0.5%
+    padding: 0.5%;
+    margin-bottom: 20px;
 }
 
 .Navigation--search {
@@ -15,7 +18,8 @@
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    float:left
+    float:left;
+    outline: none;
 }
 
 .Navigation--gridButton, .Navigation--listButton {
@@ -29,3 +33,37 @@
     cursor: pointer;
 }
 
+.Navigation--gridButton {
+    padding-right: 50px;
+}
+
+/*mobile view*/
+@media screen and (max-width: 500px) {
+
+    .Navigation--search {
+        float:left;
+        width: 88%;
+    }
+    
+    .Navigation--gridButton, .Navigation--listButton {
+        float:right;
+        padding: 10px;
+    }
+
+    .Navigation--listButton {
+        padding-right: 30px
+    }
+
+}
+
+
+/* @media screen and (max-width: 500px) {
+    .header span {
+    float: none;
+    display: block;
+    text-align: left;
+    }
+    .name {
+    float: none;
+    }
+} */

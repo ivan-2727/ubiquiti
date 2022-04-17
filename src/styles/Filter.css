@@ -7,7 +7,7 @@
 }
 
 .Filter--Bar--Term {
-    border-bottom: solid 1px lightgray;
+    padding-left: 10px
 }
 
 .Filter--Button {
@@ -17,15 +17,25 @@
     color: gray;
     font-size: large;
     cursor: pointer;
+    padding-right: 20px;
 }
 
 .Filter--Bar {
-    display: none;
+    display: block;
     position: absolute;
     z-index: 2;
     background-color: white;
     animation: fadeIn 1s;
     width: 200px;
+    box-shadow: 0 20px 20px gray;
+}
+
+.Filter--Bar--Clear {
+    border: solid 1px gray;
+    border-radius: 20px;
+    width: fit-content;
+    margin-left: 30px;
+    cursor: pointer
 }
 
 @keyframes fadeIn {
@@ -48,6 +58,10 @@
     100% {opacity:1;}
   }
 
-.Filter--Container:hover .Filter--Bar {
-    display: block;
-}
+
+  @media screen and (max-width:500px) {
+    .Filter--Container {
+        float: left;
+        padding: 10px
+    }
+  }

@@ -1,11 +1,14 @@
-@import url("http://fonts.googleapis.com/css?family=Lato:400,700");
+@import url("//fonts.googleapis.com/css?family=Lato:400,700");
 
 .ListOfAll--container {
     padding-top: 20px;
+    width: 100%;
+    text-align: center;
 }
 
 .ListOfAll--table {
     line-height: 2;
+    margin: auto;
     font-family: 'Lato', sans-serif;
     border: collapse;
     animation: fadeIn 1s;
@@ -104,4 +107,20 @@
   @-o-keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
+  }
+
+  @media screen and (max-width:500px) {
+    .IconHeader {
+        text-align: center;
+        line-height: 1;
+    }
+
+    .ListOfAll--grid {
+        margin: 30px;
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        grid-gap: 1em;
+        animation: fadeIn 1s;
+    }
+
   }
