@@ -1,5 +1,5 @@
 import { render, screen, fireEvent} from '@testing-library/react';
-import App from '../App';
+import App from '../components/App';
 import { act } from 'react-dom/test-utils';
 
 jest.setTimeout(15000);

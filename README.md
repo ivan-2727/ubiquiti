@@ -12,7 +12,7 @@ Contents of *src* folder:
 
 *functions* - typescript interfaces
 
-*components* - all components except the main App component which is in the root of *src*
+*components* - React components
 
 ## Component test
 

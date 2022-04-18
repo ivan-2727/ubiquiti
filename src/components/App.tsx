@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import './App.css';
-import ListOfAll from './components/ListOfAll';
-import Header from './components/Header';
-import OneDevice from './components/OneDevice';
-import Navigation from './components/Navigation';
-import Title from './components/Title';
-import {AppStateInterface} from './interfaces/interfaces'
-import { fetchDevices, initialAppState, searchAndFilter} from './functions/functions';
+import '../styles/App.css';
+import ListOfAll from './ListOfAll';
+import Header from './Header';
+import OneDevice from './OneDevice';
+import Navigation from './Navigation';
+import Title from './Title';
+import {AppStateInterface} from '../interfaces/interfaces'
+import { fetchDevices, initialAppState, searchAndFilter} from '../functions/functions';
 
 function App() {
 
