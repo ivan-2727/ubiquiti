@@ -10,7 +10,7 @@ Contents of *src* folder:
 
 *functions* - some helper functions
 
-*functions* - typescript interfaces
+*interfaces* - typescript interfaces
 
 *components* - React components
 
