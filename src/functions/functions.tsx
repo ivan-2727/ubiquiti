@@ -1,7 +1,5 @@
-import { randomUUID } from "crypto";
-import { AppStateInterface, setAppStateInterface, fetchedDeviceInterface, DeviceInterface, fetchFunctionInterface } from "../interfaces/interfaces";
+import { fetchedDeviceInterface, DeviceInterface } from "../interfaces/interfaces";
 import {v4 as uuidv4} from 'uuid';
-import OneDevice from "../components/OneDevice";
 
 export const fetchDevices = async () : Promise<DeviceInterface[]> => {
   let devices : DeviceInterface[] = [];

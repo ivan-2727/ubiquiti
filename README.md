@@ -14,14 +14,14 @@ Contents of *src* folder:
 
 *components* - all components except the main App component which is in the root of *src*
 
-## Unit tests
+## Component test
 
-Folder *tests* contains Jest/React Testing Library tests. Run: `npm test`  
+Folder *tests* contains tests in Jest / React Testing Library. Run: `npm test`  
 
-## e2e tests
+## e2e test
 
-Folder *cypress/integration/e2e* contains e2e tests in Cypress. Run them after starting localhost 3000: `npm e2e`. Visualisation: `npx cypress open` 
+Folder *cypress/integration/e2e* contains e2e tests in Cypress. Run them after starting localhost 3000: `npm run e2e`. This takes 10-30 seconds. Visualisation: `npx cypress open` 
 
 ## Heroku
 
-(working for both mobile and desktop)
+https://sleepy-sierra-00212.herokuapp.com/ (working for both mobile and desktop)

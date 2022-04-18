@@ -71,16 +71,19 @@ test('search picks some devices from the sample', async () => {
   expect(screen.queryByText(/AmpliFi/i)).toBeNull();
 })
 
-// test('filter by line name', async () => {
-//   act(() => {render(<App/>);})
-//   await new Promise((r) => setTimeout(r, 500));
-//   fireEvent.click(screen.getByText('filter'));
-//   await new Promise((r) => setTimeout(r, 100));
-//   fireEvent.click(screen.getByText(/airmax/i));
-
-//   expect(screen.queryByText(/airmax/i)).toBeInTheDocument();
-//   expect(screen.queryByText(/AmpliFi/i)).toBeNull();
-// })
+test('filter by line name', async () => {
+  act(() => {render(<App/>);})
+  await new Promise((r) => setTimeout(r, 500));
+  fireEvent.click(screen.getByRole('Filter--Button'));
+  await new Promise((r) => setTimeout(r, 100));
+  fireEvent.click(screen.getAllByRole('Filter--Bar--Term')[0]);
+  fireEvent.click(screen.getByRole('Filter--Button'));
+  await new Promise((r) => setTimeout(r, 500));
+  screen.queryAllByText(/airmax/i).forEach(element => {
+    expect(element).toBeInTheDocument();
+  })
+  expect(screen.queryAllByText(/AmpliFi/i).length).toBe(0);
+})
 
 
 

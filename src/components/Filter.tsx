@@ -1,6 +1,6 @@
 import '../styles/Filter.css'
 import { BiX } from "react-icons/bi";
-
+import {v4 as uuidv4} from 'uuid';
 import { DeviceInterface, FilterInterface } from "../interfaces/interfaces";
 import { useState } from 'react';
 
@@ -27,7 +27,7 @@ function Filter (props : FilterInterface) {
     return (
         <div className='Filter--Container' >
             
-            <button className="Filter--Button" onClick={()=>{setShowBar(!showBar)}} >
+            <button className="Filter--Button" role="Filter--Button" onClick={()=>{setShowBar(!showBar)}} >
                 {showBar ? <BiX size={25} /> : "Filter"}
             </button>
 
@@ -36,7 +36,7 @@ function Filter (props : FilterInterface) {
             &emsp;Clear&emsp; 
             </p>
             {allPossiblefilterTerms.map(term => 
-            <p className='Filter--Bar--Term' onClick={()=>{changeFilterTerms(term)}}> 
+            <p key={uuidv4()} className='Filter--Bar--Term' role="Filter--Bar--Term" onClick={()=>{changeFilterTerms(term)}}> 
                 <input type="checkbox" checked={props.filterTerms.includes(term)}/>
                 <label className='Filter--Bar--Term--Label'>&emsp;{term}</label> 
             </p>
